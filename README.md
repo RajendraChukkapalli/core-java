@@ -104,6 +104,28 @@ Java 8 has introduced forEach method in java.lang.Iterable and it is the super c
 
 # Java9 Features:
 
+## The Java Platform module system
+
+```bash
+As codebases grow larger, the odds of creating complicated, tangled “spaghetti code” increase exponentially and it has 2 fundamental problems. 1. It is hard to truly encapsulates the code 2. no notion of defining the explicit dependncies between JAR files of system. 
+
+A public class can be accessed by any other public class in the classpath.
+
+When starting a modular application, the JVM verifies whether all modules can be resolved based on the `requires` statements—a big step. Modules allow you to better structure your application with strong enforcement of encapsulation and explicit dependencies
+```
+
+## Linking 
+
+> Instead of shipping your app with a fully loaded JDK installation, you can create a minimal runtime image optimized for your application by taking the advantage of Java9 modular system. You can leverage the `jlink` tool introduced as part of Java9.
+
+
+
+
+
+
+
+
+
 
 
   
