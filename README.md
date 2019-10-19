@@ -3,7 +3,7 @@
 
 ## Try-with-resources statement
 
-Wrap the resource in try block. Any object that implements "java.lang.AutoCloseable", which includes all objects which implement java.io.Closeable, can be used as a resource. 
+Wrap the resource in try block. Any object that implements `java.lang.AutoCloseable`, which includes all objects which implement `java.io.Closeable`, can be used as a resource. 
 
 ``` bash
 	static String readFirstLineFromFile(String path) throws IOException {
@@ -47,7 +47,7 @@ throw ex;
 
 ## Strings in switch Statement
 
-Now you can user strings in switch statements
+Now you can user strings in `switch` statements
 
 ## Type Inference for Generic Instance (Diamond operator support)
 
@@ -73,7 +73,7 @@ The java.nio.file package and its related package, java.nio.file.attribute, prov
 ## PermGen Space Removed - Replaced with Metaspace
 
 ```bash
-Prior to Java8, PermGen space is part of Heap. Now it is part of Native Memory. 
+`Prior to Java8, PermGen space is part of Heap. Now it is part of Native Memory`. 
 PermGen (Permanent Generation) is a special heap space separated from the main memory heap.
 
 The JVM keeps track of loaded class metadata in the PermGen. Additionally, the JVM stores all the static content in this memory section. This includes all the static methods, primitive variables, and references to the static objects.
@@ -84,8 +84,8 @@ The default maximum memory size for 32-bit JVM is 64 MB and 82 MB for the 64-bit
 
 However, we can change the default size with the JVM options:
 
--XX:PermSize=[size] is the initial or minimum size of the PermGen space
--XX:MaxPermSize=[size] is the maximum size
+`-XX:PermSize=[size]` is the initial or minimum size of the PermGen space
+`-XX:MaxPermSize=[size]` is the maximum size
 Most importantly, Oracle completely removed this memory space in JDK 8 release.
 
 With its limited memory size, PermGen is involved in generating the famous OutOfMemoryError.
