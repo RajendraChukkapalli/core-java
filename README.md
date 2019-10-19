@@ -1,11 +1,13 @@
-# Java7 Features:
+Core Java changes
+-----------------
 
+## Java7 Features:
 
-## Try-with-resources statement
+### Try-with-resources statement
 
 Wrap the resource in try block. Any object that implements `java.lang.AutoCloseable`, which includes all objects which implement `java.io.Closeable`, can be used as a resource. 
 
-``` bash
+```java
 	static String readFirstLineFromFile(String path) throws IOException {
 	try (BufferedReader br =
 		       new BufferedReader(new FileReader(path))) {
@@ -14,21 +16,21 @@ Wrap the resource in try block. Any object that implements `java.lang.AutoClosea
 	}
 ```
 
-## Suppressed Exceptions
+### Suppressed Exceptions
 
 An exception can be thrown from the block of code associated with the try-with-resources statement.
 
-## Underscores in numeric literals
+### Underscores in numeric literals
 
 int one_million = 1_000_000; This is added for better readability
 
-## Binary literals 
+### Binary literals 
 
 int binary = 0b1001_1001;  => 0B/0b can be used
 
-## Multiple exception catching
+### Multiple exception catching
 
-```bash
+```java
 } catch (FirstException ex) {
      logger.error(ex);
      throw ex;
@@ -45,32 +47,32 @@ throw ex;
 }
 ```
 
-## Strings in switch Statement
+### Strings in switch Statement
 
 Now you can user strings in `switch` statements
 
-## Type Inference for Generic Instance (Diamond operator support)
+### Type Inference for Generic Instance (Diamond operator support)
 
 We can replace the type arguments required to invoke the constructor of a generic class with an empty set of type parameters (<>) as long as the compiler can infer the type arguments from the context.
 
-## java.nio.file package
+### java.nio.file package
 
 The java.nio.file package and its related package, java.nio.file.attribute, provide comprehensive support for file I/O and for accessing the file system. A zip file system provider is also available in JDK 7.
 
-# Java8 Features:
+## Java8 Features:
 
-## Lambda Expressions
+### Lambda Expressions
 
-## Pipelines and Streams
+### Pipelines and Streams
 
-## Date and Time API
-## Default Methods
-## Type Annotations
-## Nashorn JavaScript Engine
-## Concurrent Accumulators
-## Parallel operations
+### Date and Time API
+### Default Methods
+### Type Annotations
+### Nashorn JavaScript Engine
+### Concurrent Accumulators
+### Parallel operations
 
-## PermGen Space Removed - Replaced with Metaspace
+### PermGen Space Removed - Replaced with Metaspace
 
 ```bash
 `Prior to Java8, PermGen space is part of Heap. Now it is part of Native Memory`. 
@@ -98,23 +100,41 @@ As a result, this native memory region grows automatically by default. Here we a
 ```
 
 
-## TLS SNI
-## forEach() method in Iterable interface
+### TLS SNI
+### forEach() method in Iterable interface
 Java 8 has introduced forEach method in java.lang.Iterable and it is the super class of "java.util.Collection" and it is available for all the List and Set classes
 
-# Java9 Features:
+## Java9 Features:
 
-## The Java Platform module system
+### The Java Platform module system
 
-```bash
-As codebases grow larger, the odds of creating complicated, tangled “spaghetti code” increase exponentially and it has 2 fundamental problems. 1. It is hard to truly encapsulates the code 2. no notion of defining the explicit dependncies between JAR files of system. 
 
-A public class can be accessed by any other public class in the classpath.
+As codebases grow larger, the odds of creating complicated, tangled “spaghetti code” increase exponentially and it has 2 fundamental problems. 1. It is hard to truly encapsulates the code 2. no notion of defining the explicit dependncies between JAR files of system. \
 
-When starting a modular application, the JVM verifies whether all modules can be resolved based on the `requires` statements—a big step. Modules allow you to better structure your application with strong enforcement of encapsulation and explicit dependencies
+A public class can be accessed by any other public class in the classpath. \
+
+When starting a modular application, the JVM verifies whether all modules can be resolved based on the `requires` statements—a big step. Modules allow you to better structure your application with strong enforcement of encapsulation and explicit dependencies \
+
+```java 
+	#### Module1 
+	
+	module-info.java 
+	module my-module1 {
+	  exports com.examples.my-module1;
+	  requires my-module2;
+	}
+	
+	#### Module2 
+	
+	module-info.java 
+	module my-module2 {
+	  exports com.examples.my-module2;
+	}
+
 ```
 
-## Linking 
+
+### Linking 
 
 > Instead of shipping your app with a fully loaded JDK installation, you can create a minimal runtime image optimized for your application by taking the advantage of Java9 modular system. You can leverage the `jlink` tool introduced as part of Java9.
 
