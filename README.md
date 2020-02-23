@@ -106,7 +106,10 @@ Java 8 has introduced forEach method in java.lang.Iterable and it is the super c
 #### The Java Platform module system
 
 ```java
-As codebases grow larger, the odds of creating complicated, tangled “spaghetti code” increase exponentially and it has 2 fundamental problems. 1. It is hard to truly encapsulates the code 2. no notion of defining the explicit dependncies between JAR files of system. 
+As codebases grow larger, the odds of creating complicated, tangled “spaghetti code” increase exponentially 
+and it has 2 fundamental problems. 
+1. It is hard to truly encapsulates the code 
+2. no notion of defining the explicit dependncies between JAR files of system. 
 
 A public class can be accessed by any other public class in the classpath. 
 
