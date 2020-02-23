@@ -92,7 +92,8 @@ With its limited memory size, PermGen is involved in generating the famous OutOf
 
 Metaspace:
 
-Simply put, Metaspace is a new memory space – starting from the Java 8 version; it has replaced the older PermGen memory space. The most significant difference is how it handles the memory allocation.
+Simply put, Metaspace is a new memory space – starting from the Java 8 version; it has replaced the older PermGen memory space.
+The most significant difference is how it handles the memory allocation.
 
 As a result, this native memory region grows automatically by default. Here we also have new flags to tune-up the memory:
 ```
@@ -117,27 +118,28 @@ When starting a modular application, the JVM verifies whether all modules can be
 ```
 
 ```java 
-	#### Module1 
-	
-	module-info.java 
-	module my-module1 {
-	  exports com.examples.my-module1;
-	  requires my-module2;
-	}
-	
-	#### Module2 
-	
-	module-info.java 
-	module my-module2 {
-	  exports com.examples.my-module2;
-	}
+#### Module1 
 
+module-info.java 
+module my-module1 {
+  exports com.examples.my-module1;
+  requires my-module2;
+}
+
+#### Module2 
+
+module-info.java 
+module my-module2 {
+  exports com.examples.my-module2;
+}
 ```
 Java platform has been modularized with Java9.
 
 #### Linking 
 
-Instead of shipping your app with a fully loaded JDK installation, you can create a minimal runtime image optimized for your application by taking the advantage of Java9 modular system. You can leverage the `jlink` tool introduced as part of Java9.
+Instead of shipping your app with a fully loaded JDK installation, you can create a minimal runtime image 
+optimized for your application by taking the advantage of Java9 modular system. You can leverage the `jlink` tool 
+introduced as part of Java9.
 
 #### JShell: the interactive Java REPL
 
@@ -159,7 +161,8 @@ You can define a `private` shared method.
 
 #### HTTP/2 support.
 
-`HttpURLConnection` has been enhanced to support `websockets` and HTTP2. But this is added a `_incubator module_`, which means it can be removed. Lets not start incorporating this feature yet.
+`HttpURLConnection` has been enhanced to support `websockets` and HTTP2. But this is added a `_incubator module_`, 
+which means it can be removed. Lets not start incorporating this feature yet.
 
 ```java
 HttpClient client = HttpClient.newHttpClient();
