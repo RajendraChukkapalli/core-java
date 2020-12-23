@@ -1,4 +1,4 @@
-package com.examples.collections;
+package com.examples.corejava.java8;
 
 import java.util.*;
 
