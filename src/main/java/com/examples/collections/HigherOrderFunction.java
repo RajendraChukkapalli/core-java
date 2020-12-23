@@ -1,4 +1,4 @@
-package com.examples.java8.streams;
+package com.examples.collections;
 
 import java.util.*;
 

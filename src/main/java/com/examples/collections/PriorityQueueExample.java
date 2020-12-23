@@ -6,14 +6,14 @@ import java.util.function.Predicate;
 
 /**
  * Java Priority queue is an implementation of "minHeap" can be
- * converted into maxheap using a comparator.
+ * converted into max heap using a comparator.
  * 
- * Also Preicate is used to filter the elements from the heap. 
+ * Also Predicate is used to filter the elements from the heap. 
  * 
- *  minheap = "lowest element" is at the top (root) and all the childs are greater
+ *  min-heap = "lowest element" is at the top (root) and all the child are greater
  *  than the top element (root)
  *  
- *  maxheap - "max element" is at the top (root) and all the childs 
+ *  max-heap - "max element" is at the top (root) and all the child
  *  are lower than the top element.
  *  
  *  You can get the min and max elements in O(1) time complexity.
@@ -40,15 +40,18 @@ public class PriorityQueueExample {
 					}})
 				   .forEach(a ->  System.out.print(a.intValue() + "  "));
 		
-		
-		// create a priority queue which puts the elements like max heap
+		while(pq.size() > 0) {
+			System.out.println(pq.remove());
+		}
+		System.out.println("-----------------------");
+		//  Create a priority queue which puts the elements like max heap
 		PriorityQueue<Integer> pq2 = new PriorityQueue<>(new Comparator<Integer>() {
 									@Override
 									public int compare(Integer o1, Integer o2) {
-										return o2.intValue() - o1.intValue();
-									}
-		});
-		
+										 return o2.intValue() - o1.intValue();
+										// return -1 * o1.compareTo(o2);
+									}});
+		//PriorityQueue<Integer> pq2 = new PriorityQueue<>();
 		pq2.add(80);
 		pq2.add(75);
 		pq2.add(60);
@@ -57,6 +60,11 @@ public class PriorityQueueExample {
 		pq2.add(-100);
 		System.out.println();
 		pq2.stream().forEach(a -> System.out.print(a.intValue() + "  "));
+		System.out.println();
+		
+		while(pq2.size() > 0) {
+			System.out.println(pq2.remove());
+		}
 	}
 }
 	

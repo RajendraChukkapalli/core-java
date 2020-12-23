@@ -1,4 +1,4 @@
-package com.examples.cocurrency;
+package com.examples.concurrency;
 
 /**
  * Dead lock example

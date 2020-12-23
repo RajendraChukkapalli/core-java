@@ -1,4 +1,4 @@
-package com.examples.collections;
+package com.examples.corejava.java8;
 
 import java.util.Arrays;
 import java.util.function.IntPredicate;
@@ -20,6 +20,7 @@ public class StreamsGetMin {
 		
 		int min2 = getMinValueUsingStreams(intArray);
 		System.out.println(min2);
+		
 	}
 
 	/**
